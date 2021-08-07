@@ -11,7 +11,7 @@ import retrofit2.Response
 
 class HomeService(val view: HomeFragmentView) {
     fun tryGetUsers(){
-        val homeRetrofitInterface = ApplicationClass.sRetrfit.create(HomeRetrofitInterface::class.java)
+        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
         homeRetrofitInterface.getUsers().enqueue(object: Callback<UserResponse>{
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 view.onGetUserSuccess(response.body() as UserResponse)
@@ -24,7 +24,7 @@ class HomeService(val view: HomeFragmentView) {
     }
 
     fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
-        val homeRetrofitInterface = ApplicationClass.sRetrfit.create(HomeRetrofitInterface::class.java)
+        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
         homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse>{
             override fun onResponse(
                 call: Call<SignUpResponse>,

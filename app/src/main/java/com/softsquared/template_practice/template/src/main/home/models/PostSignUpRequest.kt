@@ -8,4 +8,4 @@ data class PostSignUpRequest (
     @SerializedName("confirmPassword") val confirmPassword: String,
     @SerializedName("nickname") val nickname: String,
     @SerializedName("phoneNumber") val phoneNumber: String
-)
+)git

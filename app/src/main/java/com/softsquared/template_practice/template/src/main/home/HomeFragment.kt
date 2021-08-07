@@ -53,6 +53,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     }
 
     override fun onPostSignUpFailure(message: String) {
-        TODO("Not yet implemented")
+        dismissLoadingDialog()
+        showCustomToast("오류 : $message")
     }
 }
